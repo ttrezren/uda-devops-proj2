@@ -1,0 +1,14 @@
+[
+    {
+        "ParameterKey": "InstanceType",
+        "ParameterValue": "ami-01816435b55b79ceb"
+    },
+    {
+        "ParameterKey": "EnvironmentName",
+        "ParameterValue": "HighlyAvailableWebApp"
+    },
+    {
+        "ParameterKey": "JumpboxAccessIp",
+        "ParameterValue": "184.23.27.6/32"
+    }
+]
