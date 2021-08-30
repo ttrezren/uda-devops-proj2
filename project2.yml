@@ -316,29 +316,6 @@ Resources:
       UnhealthyThresholdCount: 5
       VpcId: !Ref VPC
 
-  JumpboxSecGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Allow SSH
-      VpcId: !Ref VPC
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
-          CidrIp: !Ref JumpboxAccessIp
-    
-  Jumpbox:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: !Ref InstanceType
-      InstanceType: t2.micro
-      NetworkInterfaces:
-        - AssociatePublicIpAddress: true
-          SubnetId: !Ref PublicSubnet1
-      SecurityGroupIds:
-      - !GetAtt JumpboxSecGroup.GroupId
-      KeyName: admin-cli
-
 Outputs:
   TargetGroup:
     Description: Target for auto-scaling group
