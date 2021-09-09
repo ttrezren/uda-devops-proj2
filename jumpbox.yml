@@ -1,11 +1,27 @@
 # Additional work for bonus
 
-#Parameters
+Parameters:
   JumpboxAccessIp:
     Description: IP address from which ssh is allowed
     Type: String
+    Default: 184.23.27.6/32
 
-#Resources
+  VPC:
+    Description: VPC to use
+    Type: String
+    Default: vpc-0bf8f3463972bb40a
+
+  InstanceType:
+    Description: AIM for an ubuntu bionic instance in your zone
+    Type: String
+    Default: ami-01816435b55b79ceb
+
+  PublicSubnet1:
+    Description: Public subnet to use
+    Type: String
+    Default: subnet-0fcd7394564ca50b1
+
+Resources:
   JumpboxSecGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -25,6 +41,12 @@
       NetworkInterfaces:
         - AssociatePublicIpAddress: true
           SubnetId: !Ref PublicSubnet1
+          DeviceIndex: 0
       SecurityGroupIds:
       - !GetAtt JumpboxSecGroup.GroupId
       KeyName: admin-cli
+
+Outputs:
+  JumpboxIp:
+    Description: Address to ssh into
+    Value: !GetAtt Jumpbox.PublicIp

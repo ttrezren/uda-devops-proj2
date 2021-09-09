@@ -1,14 +1,30 @@
 [
     {
-        "ParameterKey": "InstanceType",
-        "ParameterValue": "ami-01816435b55b79ceb"
-    },
-    {
         "ParameterKey": "EnvironmentName",
         "ParameterValue": "HighlyAvailableWebApp"
     },
     {
-        "ParameterKey": "JumpboxAccessIp",
-        "ParameterValue": "184.23.27.6/32"
+        "ParameterKey": "VPC",
+        "ParameterValue": "vpc-0bf8f3463972bb40a"
+    },
+    {
+        "ParameterKey": "PublicSubnet1",
+        "ParameterValue": "subnet-0fcd7394564ca50b1"
+    },
+    {
+        "ParameterKey": "PublicSubnet2",
+        "ParameterValue": "subnet-0b26b3253955304d7"
+    },
+    {
+        "ParameterKey": "PrivateSubnet1",
+        "ParameterValue": "subnet-0e1daf42dbe743ae9"
+    },
+    {
+        "ParameterKey": "PrivateSubnet2",
+        "ParameterValue": "subnet-045c515bdb5b73a2a"
+    },
+    {
+        "ParameterKey": "InstanceType",
+        "ParameterValue": "ami-01816435b55b79ceb"
     }
 ]

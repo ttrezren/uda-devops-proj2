@@ -10,6 +10,26 @@ Parameters:
     Description: AIM for an ubuntu bionic instance in your zone
     Type: String
 
+  VPC:
+    Description: VPC to use
+    Type: String
+
+  PublicSubnet1:
+    Description: Public subnet to use
+    Type: String
+    
+  PublicSubnet2:
+    Description: Second Public subnet to use
+    Type: String
+    
+  PrivateSubnet1:
+    Description: Private subnet to use
+    Type: String
+    
+  PrivateSubnet2:
+    Description: Second Private subnet to use
+    Type: String
+
 Resources:
   ProfileWithRolesForOurApp:
     Type: AWS::IAM::InstanceProfile
@@ -138,6 +158,4 @@ Outputs:
       - ''
       - - 'http://'
         - !GetAtt WebAppLB.DNSName
-  JumpboxIp:
-    Description: Address to ssh into
-    Value: !GetAtt Jumpbox.PublicIp
+
